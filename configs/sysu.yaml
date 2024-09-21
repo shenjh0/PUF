@@ -1,0 +1,22 @@
+# arguments for dataset
+dataset: sysu
+nclass: 2
+crop_size: 256
+data_root: /data/sjh/semi_dataset/SYSU256/
+
+# arguments for training
+epochs: 80
+batch_size: 4 # per GPU x 1 GPU
+lr: 0.01
+lr_multi: 1.0
+lr_min: 0.0002
+conf_thresh: 0.95
+
+# arguments for model
+model: deeplabv3plusattn
+backbone: resnet50
+replace_stride_with_dilation: [False, False, True]
+dilations: [6, 12, 18]
+drop_ratio: 0.3
+patch_num: [4, 4]
+conf_thres: 0.3
